@@ -44,15 +44,16 @@
           animation-duration: 0.8s;
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
-  -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 #dartarus-slider .dartarus-active {
   display: block;
 }
 
-#dartarus-slider #dartarus-prev, #dartarus-slider #dartarus-next {
+#dartarus-slider #dartarus-prev,
+#dartarus-slider #dartarus-next {
   width: 80px;
   height: 150px;
   background: #ffffff66;
@@ -72,7 +73,7 @@
   right: 0;
 }
 
-#dartarus-buttons {
+#dartarus-slider #dartarus-buttons {
   position: absolute;
   bottom: 50px;
   left: 50%;
@@ -80,7 +81,7 @@
           transform: translateX(-50%);
 }
 
-#dartarus-buttons .dartarus-button {
+#dartarus-slider #dartarus-buttons .dartarus-button {
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -88,6 +89,33 @@
   border-radius: 50%;
   margin: 0 10px;
   cursor: pointer;
+}
+
+#dartarus-slider #dartarus-buttons .dartarus-button-active {
+  -webkit-animation-name: dartarusButton;
+          animation-name: dartarusButton;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes dartarusButton {
+  0% {
+    background: #ffffff77;
+  }
+  100% {
+    background: #00000077;
+  }
+}
+
+@keyframes dartarusButton {
+  0% {
+    background: #ffffff77;
+  }
+  100% {
+    background: #00000077;
+  }
 }
 
 @-webkit-keyframes dartarusImage {

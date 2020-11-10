@@ -11,6 +11,7 @@ function btnNext() {
 
     showItem();
     reset();
+    switchButton();
 }
 
 //按鈕函式：上一張
@@ -21,6 +22,7 @@ function btnPrev() {
     
     showItem();
     reset();
+    switchButton();
 }
 
 next.onclick = btnNext;                      //點擊函式
@@ -47,4 +49,27 @@ var auto = setInterval(btnNext,duration);
 function reset() {
     clearInterval(auto);                    //清除時間
     auto = setInterval(btnNext, duration);  //重新自動播放
+}
+
+//取得所有小按鈕
+var btns = document.getElementsByClassName("dartarus-button");
+
+//迴圈執行每顆按鈕點擊事情
+for (var i = 0; i< btns.length; i++){
+    //匿名函式 function(){}
+    btns[i].onclick = function(){
+        index = this.getAttribute("data-slider-item") - 1;  //編號 = 點擊按鈕的屬性 - 1
+
+        showItem();
+        reset();
+        switchButton();
+    }
+}
+
+//小按鈕啟動效果切換
+function switchButton(){
+    for (var i = 0; i < btns.length; i++){
+        btns[i].classList.remove("dartarus-button-active");
+    }
+    btns[index].classList.add("dartarus-button-active");
 }
