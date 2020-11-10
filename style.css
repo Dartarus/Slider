@@ -1,0 +1,117 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 微軟正黑體;
+}
+
+#dartarus-slider {
+  height: 100vh;
+  overflow: hidden;
+}
+
+#dartarus-slider .dartarus-item {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
+#dartarus-slider .dartarus-item img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation-name: dartarusImage;
+          animation-name: dartarusImage;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+#dartarus-slider .dartarus-item h1 {
+  position: absolute;
+  color: white;
+  top: 100px;
+  left: 150px;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  -webkit-animation-name: dartarusTitle;
+          animation-name: dartarusTitle;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
+#dartarus-slider .dartarus-active {
+  display: block;
+}
+
+#dartarus-slider #dartarus-prev, #dartarus-slider #dartarus-next {
+  width: 80px;
+  height: 150px;
+  background: #ffffff66;
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+#dartarus-slider #dartarus-prev {
+  left: 0;
+}
+
+#dartarus-slider #dartarus-next {
+  right: 0;
+}
+
+@-webkit-keyframes dartarusImage {
+  0% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes dartarusImage {
+  0% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes dartarusTitle {
+  0% {
+    -webkit-transform: translateX(-500px);
+            transform: translateX(-500px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes dartarusTitle {
+  0% {
+    -webkit-transform: translateX(-500px);
+            transform: translateX(-500px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 微軟正黑體;
+}
+
+// 大盒子
+#dartarus-slider {
+    height: 100vh;
+    overflow: hidden;   // 溢出 隱藏
+
+    // 輪播項目
+    .dartarus-item {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: none;
+
+        // 圖片
+        img {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            animation-name: dartarusImage;       // 動畫名稱
+            animation-duration: 1s;         // 動畫時間
+        }
+
+        // 標題
+        h1 {
+            position: absolute;
+            color: white;
+            top: 100px;
+            left: 150px;
+            text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+            animation-name: dartarusTitle;
+            animation-duration: 0.8s;
+            animation-delay: 0.5s;              // 動畫延遲
+            animation-fill-mode: backwards;     // 停留在動畫開始的畫面 (forwards 相反)
+        }
+    }
+
+    // 要顯示的項目
+    .dartarus-active {
+        display: block;
+    }
+
+    // 大顆按鈕樣式
+    #dartarus-prev, #dartarus-next {
+        width: 80px;
+        height: 150px;
+        background: #ffffff66;
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    #dartarus-prev {
+        left: 0;
+    }
+    #dartarus-next {
+        right: 0;
+    }
+}
+
+// 動畫 animation 必須先額外設定動畫的效果
+// @關鍵影格 動畫名稱
+// 0% {} 開始時效果
+// 0% - 100% {}
+@keyframes dartarusImage {
+    0% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes dartarusTitle {
+    0% {
+        transform: translateX(-500px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
