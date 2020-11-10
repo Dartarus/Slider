@@ -9,10 +9,9 @@ https://dartarus.github.io/Slider/
 # CDN
 
 ```
-<link rel="stylesheet" href="https://dartarus.github.io/Slider/style.css">
-```
-```
-<script src="https://dartarus.github.io/Slider/script.js"></script>
+    <link rel="stylesheet" href="https://dartarus.github.io/Slider/style.css">
+
+    <script src="https://dartarus.github.io/Slider/script.js"></script>
 ```
 
 # 架構
