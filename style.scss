@@ -56,6 +56,7 @@
         z-index: 3;
         top: 50%;
         transform: translateY(-50%);
+        cursor: pointer;
     }
 
     #dartarus-prev {
@@ -65,6 +66,24 @@
         right: 0;
     }
 }
+
+#dartarus-buttons {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .dartarus-button {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background: #ffffff77;
+        border-radius: 50%;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+}
+
 
 // 動畫 animation 必須先額外設定動畫的效果
 // @關鍵影格 動畫名稱
